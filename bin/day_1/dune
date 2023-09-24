@@ -1,0 +1,17 @@
+(executable
+ (public_name day_1)
+ (name calorie_counting)
+ (libraries utils))
+
+(rule
+ (deps
+  (file "test.input"))
+ (action
+  (with-stdout-to
+   test.output
+   (run day_1 --input-path test.input))))
+
+(rule
+ (alias runtest)
+ (action
+  (diff test.expected test.output)))
