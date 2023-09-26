@@ -1,0 +1,17 @@
+(executable
+ (public_name day_4)
+ (name camp_cleanup)
+ (libraries utils))
+
+(rule
+ (deps
+  (file "test.input"))
+ (action
+  (with-stdout-to
+   test.output
+   (run day_4 --input-path test.input))))
+
+(rule
+ (alias runtest)
+ (action
+  (diff test.expected test.output)))
