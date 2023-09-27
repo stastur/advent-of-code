@@ -1,0 +1,17 @@
+(executable
+ (public_name day_5)
+ (name supply_stacks)
+ (libraries utils base))
+
+(rule
+ (deps
+  (file "test.input"))
+ (action
+  (with-stdout-to
+   test.output
+   (run day_5 --input-path test.input))))
+
+(rule
+ (alias runtest)
+ (action
+  (diff test.expected test.output)))
