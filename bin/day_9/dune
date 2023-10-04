@@ -1,0 +1,17 @@
+(executable
+ (public_name day_9)
+ (name rope_bridge)
+ (libraries utils base))
+
+(rule
+ (deps
+  (file "test.input"))
+ (action
+  (with-stdout-to
+   test.output
+   (run day_9 --input-path test.input))))
+
+(rule
+ (alias runtest)
+ (action
+  (diff test.expected test.output)))
