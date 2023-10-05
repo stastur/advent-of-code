@@ -1,0 +1,17 @@
+(executable
+ (public_name day_10)
+ (name cathode_ray_tube)
+ (libraries utils base))
+
+(rule
+ (deps
+  (file "test.input"))
+ (action
+  (with-stdout-to
+   test.output
+   (run day_10 --input-path test.input))))
+
+(rule
+ (alias runtest)
+ (action
+  (diff test.expected test.output)))
