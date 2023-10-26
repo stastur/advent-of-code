@@ -1,7 +1,7 @@
 (executable
  (public_name day_12)
  (name hill_climbing_algorithm)
- (libraries utils base))
+ (libraries utils base core_kernel.pairing_heap))
 
 (rule
  (deps
