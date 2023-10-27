@@ -2,6 +2,12 @@
 
 Solutions for https://adventofcode.com/2022 in OCaml
 
+## Initializing challenge
+
+```bash
+./new.sh -d 01 -n calorie_counting
+```
+
 ## Running exercise
 
 ```bash
