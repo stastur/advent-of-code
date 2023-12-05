@@ -3,6 +3,11 @@
  (name %PROBLEM_NAME%)
  (libraries utils base))
 
+(env
+ (dev
+  (flags
+   (:standard -warn-error -A))))
+
 (rule
  (deps
   (file "test.input"))
