@@ -1,0 +1,22 @@
+(executable
+ (public_name day_06)
+ (name wait_for_it)
+ (libraries utils base))
+
+(env
+ (dev
+  (flags
+   (:standard -warn-error -A))))
+
+(rule
+ (deps
+  (file "test.input"))
+ (action
+  (with-stdout-to
+   test.output
+   (run day_06 --input-path test.input))))
+
+(rule
+ (alias runtest)
+ (action
+  (diff test.expected test.output)))
