@@ -27,3 +27,6 @@ let read_lines () =
 let print_result p1 p2 =
   Printf.printf "Part 1: %s\n" p1;
   Printf.printf "Part 2: %s\n" p2
+
+let to_int_list ~sep str =
+  str |> String.split_on_char sep |> List.map int_of_string
