@@ -1,0 +1,22 @@
+(executable
+ (public_name day_15)
+ (name lens_library)
+ (libraries utils base))
+
+(env
+ (dev
+  (flags
+   (:standard -warn-error -A))))
+
+(rule
+ (deps
+  (file "test.input"))
+ (action
+  (with-stdout-to
+   test.output
+   (run day_15 --input-path test.input))))
+
+(rule
+ (alias runtest)
+ (action
+  (diff test.expected test.output)))
