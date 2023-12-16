@@ -1,6 +1,6 @@
 (executable
- (public_name day_%DAY%)
- (name %PROBLEM_NAME%)
+ (public_name day_16)
+ (name the_floor_will_be_lava)
  (libraries utils base)
  (preprocess
   (pps ppx_jane)))
@@ -16,7 +16,7 @@
  (action
   (with-stdout-to
    test.output
-   (run day_%DAY% --input-path test.input))))
+   (run day_16 --input-path test.input))))
 
 (rule
  (alias runtest)
