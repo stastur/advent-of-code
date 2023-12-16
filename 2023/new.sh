@@ -38,7 +38,7 @@ problem=$(curl $(build_url "$day") | extract_problem_name | to_snake_case)
 
 guard "Could not extract problem name" $problem
 
-echo "Creating day $day problem $problem"
+echo "Creating day:$day problem:$problem"
 
 template=./_template
 src=./bin/day_$day

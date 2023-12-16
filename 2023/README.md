@@ -5,7 +5,7 @@ Solutions for https://adventofcode.com/2023 in OCaml
 ## Initializing challenge
 
 ```bash
-./new.sh -d 01 -n trebuchet
+./new.sh -d 01
 ```
 
 ## Running exercise
