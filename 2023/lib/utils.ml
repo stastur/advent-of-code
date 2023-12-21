@@ -24,6 +24,14 @@ let read_lines () =
 
   List.rev (append_line [])
 
+let lcm a b =
+  let rec gcd a b = if a = 0 then b else gcd (b mod a) a in
+  a * b / gcd a b
+
+let lcm_of_list = function
+  | hd :: tl -> List.fold_left lcm hd tl
+  | [] -> failwith "Not enough elements in list"
+
 let print_result p1 p2 =
   Printf.printf "Part 1: %s\n" p1;
   Printf.printf "Part 2: %s\n" p2
