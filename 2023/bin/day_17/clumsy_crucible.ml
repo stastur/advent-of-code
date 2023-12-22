@@ -50,7 +50,6 @@ let find_paths grid start_pos end_pos min max =
   let costs = ref [] in
 
   while not (Heap.is_empty frontier) do
-    Stdio.printf "Frontier size: %d\n" (Heap.length frontier);
     let curr, _ = Heap.pop_exn frontier in
 
     if equal_pos curr.pos end_pos then
