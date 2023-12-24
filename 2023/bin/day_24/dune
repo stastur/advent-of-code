@@ -1,0 +1,24 @@
+(executable
+ (public_name day_24)
+ (name never_tell_me_the_odds)
+ (libraries utils base)
+ (preprocess
+  (pps ppx_jane)))
+
+(env
+ (dev
+  (flags
+   (:standard -warn-error -A))))
+
+(rule
+ (deps
+  (file "test.input"))
+ (action
+  (with-stdout-to
+   test.output
+   (run day_24 --input-path test.input))))
+
+(rule
+ (alias runtest)
+ (action
+  (diff test.expected test.output)))
